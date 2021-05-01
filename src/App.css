@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.heading {
+  text-align: center;
+  /* border: 2px solid black; */
+  top: 0;
+  background-color: #ffffff;
+}
+
+#pc {
+  background-color: #ffffff;
+  color: #fbc91c;
+}
