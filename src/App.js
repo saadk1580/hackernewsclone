@@ -3,21 +3,28 @@ import React, { useState } from "react";
 import { HackerNews } from "./HackerNewsApi/HackerNews";
 
 function App() {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(0);
   const handleClick = () => {
-    setCount(count + 10);
+    setCount(count + 3);
+  };
+  const changeColor = () => {
+    document.getElementsByClassName("newBtn");
   };
   return (
     <div className="App">
-      <div>
-        <h1 className="heading">
-          <span id="pc">HACKER</span>NEWS<span id="pc">.</span>
-        </h1>
-        <button>NEW</button>
-        <button>PAST</button>
-        <HackerNews numStories={count} />
-        <button onClick={handleClick}>Load More</button>
+      <h1 className="heading">
+        <span id="pc">HACKER</span>NEWS<span id="pc">.</span>
+      </h1>
+      <div className="n-p-btns">
+        <button className={`newBtn ${changeColor}`}>NEW</button>
+        <button className="pstBtn">PAST</button>
       </div>
+      <div className="story-container">
+        <HackerNews numStories={count} />
+      </div>
+      <button onClick={handleClick} className="loadBtn">
+        Load More
+      </button>
     </div>
   );
 }

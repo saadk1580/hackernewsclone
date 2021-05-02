@@ -1,0 +1,26 @@
+.storyContainer {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 1px 20px 15px 20px;
+}
+
+.storyLink {
+  color: #000;
+  text-decoration: none;
+}
+
+.details {
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.clock {
+  margin: 0 8px 0 0;
+  font-size: 1.1rem;
+}
+
+.discription {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}

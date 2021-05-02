@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getStory } from "../HackerNewsApi/ApiFetch";
+import "./Story.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 export const Story = ({ StoryIdprop }) => {
   const [story, setStory] = useState([]);
@@ -11,6 +14,7 @@ export const Story = ({ StoryIdprop }) => {
     var d = new Date(); // Gets the current time
     var nowTs = Math.floor(d.getTime() / 1000); // getTime() returns milliseconds, and we need seconds, hence the Math.floor and division by 1000
     var seconds = nowTs - ts;
+
     var day = Math.floor(seconds / (3600 * 24));
     var h = Math.floor((seconds % (3600 * 24)) / 3600);
     var month = Math.floor(day / 12 - d.getMonth());
@@ -36,12 +40,20 @@ export const Story = ({ StoryIdprop }) => {
   };
 
   return (
-    <div>
-      <h3>{story.title}</h3>
-      <p>
-        {convertUnix(story.time) + " | " + story.descendants + " comments"}{" "}
-      </p>
-      <p>{story.text}</p>
-    </div>
+    <a href={story.url} target="_blank" className="storyLink">
+      <div className="storyContainer">
+        <h5>{story.title}</h5>
+
+        <p className="discription">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
+          consequuntur optio sit deserunt praesentium nemo.
+        </p>
+        <div className="details">
+          <FontAwesomeIcon icon={faClock} className="clock" />
+
+          {convertUnix(story.time) + " | " + story.descendants + " comments"}
+        </div>
+      </div>
+    </a>
   );
 };
