@@ -1,14 +1,26 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getStoriesId } from "./ApiFetch";
 import { Story } from "../Showdata/Story";
 
-export const HackerNews = (props) => {
+export const HackerNews = ({ type, resCount }) => {
   const [storyId, setId] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getStoriesId().then((data) => setId(data));
+    setIsLoading(true);
+    getStoriesId(type).then((data) => {
+      setId(data);
+      setIsLoading(false);
+    });
   }, []);
-
-  return storyId.slice(props.numStories, props.numStories + 3).map((item) => {
-    return <Story key={item} StoryIdprop={item} />;
-  });
+  return (
+    <React.Fragment>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        storyId.slice(resCount, resCount + 3).map((item) => {
+          return <Story key={item} StoryIdprop={item} />;
+        })
+      )}
+    </React.Fragment>
+  );
 };
