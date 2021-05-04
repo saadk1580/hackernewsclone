@@ -21,6 +21,9 @@
 }
 
 .discription {
-  margin-bottom: 20px;
   font-size: 0.9rem;
+}
+
+.title {
+  font-weight: 700;
 }

@@ -11,14 +11,20 @@ export const HackerNews = ({ type, resCount }) => {
       setId(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [setId]);
   return (
     <React.Fragment>
       {isLoading ? (
-        <p>Loading...</p>
+        <div>
+          <p>Loading...</p>
+        </div>
       ) : (
         storyId.slice(resCount, resCount + 3).map((item) => {
-          return <Story key={item} StoryIdprop={item} />;
+          return (
+            <div className="story-container">
+              <Story key={item} StoryIdprop={item} />
+            </div>
+          );
         })
       )}
     </React.Fragment>

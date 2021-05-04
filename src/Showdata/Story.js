@@ -36,22 +36,34 @@ export const Story = ({ StoryIdprop }) => {
       return `${h} hours ago`;
     } else if (seconds > 60) {
       return Math.floor(seconds / 60) + " minutes ago";
+    } else if (seconds < 60) {
+      return "few seconds ago";
     }
   };
 
   return (
-    <a href={story.url} target="_blank" className="storyLink">
+    <a rel="noreferrer" href={story.url} target="_blank" className="storyLink">
       <div className="storyContainer">
-        <h5>{story.title}</h5>
-
-        <p className="discription">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
-          consequuntur optio sit deserunt praesentium nemo.
-        </p>
+        <p className="title">{story.title}</p>
+        <div className="discription">
+          <p className="discription">
+            {!story.text ? (
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
+                consequuntur optio sit deserunt praesentium nemo.
+              </p>
+            ) : (
+              <p>{story.text}</p>
+            )}
+          </p>
+        </div>
         <div className="details">
           <FontAwesomeIcon icon={faClock} className="clock" />
 
-          {convertUnix(story.time) + " | " + story.descendants + " comments"}
+          {convertUnix(story.time) +
+            " | " +
+            (!story.descendants ? 0 : story.descendants) +
+            " comments"}
         </div>
       </div>
     </a>

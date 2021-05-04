@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.heading {
+  text-align: center;
+  background-color: #ffffff;
+  margin: 0;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+#pc {
+  background-color: #ffffff;
+  color: #fbc91c;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.newBtn {
+  border: none;
+  font-size: 1.2rem;
+
+  font-weight: 900;
+}
+.pstBtn {
+  border: none;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.n-p-btns {
+  margin: 10px;
+}
+
+.loadBtn {
+  border: none;
+  background-color: #fbc91c;
+  width: 95%;
+  /* max-width: 400px; */
+  align-content: center;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.bot-header {
+  /* height: 100px; */
+}
+
+.loadBtnPre {
+  border: none;
+  background-color: #fbc91c;
+  width: 95%;
+  /* max-width: 400px; */
+  align-content: center;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 10px auto;
+}
+
+.btn-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.bot-header-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #fbc91c;
+  margin-top: 10px;
+  height: 110px;
+  justify-content: center;
+}
