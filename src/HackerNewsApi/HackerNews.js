@@ -3,6 +3,7 @@ import { getStoriesId } from "./ApiFetch";
 import { Story } from "../Showdata/Story";
 
 export const HackerNews = ({ type, resCount }) => {
+  //Fetching storyId and storing in storyId array 
   const [storyId, setId] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -11,7 +12,10 @@ export const HackerNews = ({ type, resCount }) => {
       setId(data);
       setIsLoading(false);
     });
-  }, [setId]);
+  }, [type]);
+
+  //Displaying the story and privding props using .mao method to 
+  //iterate over the storyId array 
   return (
     <React.Fragment>
       {isLoading ? (
@@ -22,6 +26,7 @@ export const HackerNews = ({ type, resCount }) => {
         storyId.slice(resCount, resCount + 3).map((item) => {
           return (
             <div className="story-container">
+              
               <Story key={item} StoryIdprop={item} />
             </div>
           );
