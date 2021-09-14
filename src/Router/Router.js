@@ -12,16 +12,16 @@ import "./Router.css";
 
 export default function Rrouter() {
   //count is incremented by 3 because we want to show only three stories at a time
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(10);
 
   // handleClick funtion adds 3 to the count
   const handleClick = () => {
-    setCount(count + 3);
+    setCount(count + 10);
   };
 
   // handleClickPrevious funtion minuses 3 to the count
   const handleClickPrevious = () => {
-    setCount(count - 3);
+    setCount(count - 10);
   };
 
   return (
@@ -39,13 +39,12 @@ export default function Rrouter() {
           Past
         </NavLink>
       </div>
+
       <Switch>
         <Route exact path="/" render={() => <Redirect to={`top`} />} />
-
         <Route
           path="/:type"
           render={({ match }) => {
-            console.log(match.params);
             return (
               <div>
                 {match.params.type === "past" ? (
@@ -71,9 +70,6 @@ export default function Rrouter() {
                   ) : (
                     <p></p>
                   )}
-                </div>
-                <div className="bot-header-container">
-                  <h1 className="bot-header">HACKERNEWS.</h1>
                 </div>
               </div>
             );

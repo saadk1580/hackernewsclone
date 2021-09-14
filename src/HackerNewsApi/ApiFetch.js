@@ -11,7 +11,6 @@ export const getStory = async (item) => {
 };
 
 export const getStoriesId = async (params) => {
-  console.log(params);
   const res = await axios
     .get(`${baseUrl + params}stories.json`)
     .then(({ data }) => data);

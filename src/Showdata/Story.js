@@ -57,16 +57,7 @@ export const Story = ({ StoryIdprop }) => {
       <div className="storyContainer">
         <p className="title">{story.title}</p>
         <div className="discription">
-          <p className="discription">
-            {!story.text ? (
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
-                consequuntur optio sit deserunt praesentium nemo.
-              </p>
-            ) : (
-              <p>{story.text}</p>
-            )}
-          </p>
+          {!story.text ? <p>Click for more</p> : <p>{story.text}</p>}.
         </div>
         <div className="details">
           <FontAwesomeIcon icon={faClock} className="clock" />
